@@ -1,0 +1,17 @@
+<t:style use="exsl common dynamic">
+	<!-- Подключение шаблонов -->
+	<t:import href="file.xml"/>
+
+	<!-- Генерация элемента (инлайн) -->
+	<div 
+		id="{@id?}"
+		id="{@id if contains(@id, 'foo')}"
+		class="{@mod1?, @mod2 if @mod &gt; 2}"
+		params="{@param1?, @param2 if @param &gt; 3, ', '}"
+		>
+		Hello
+	</div>
+
+	<!-- Вывод результата Xpath -->
+	{foo/bar[name = $test]}
+</t:style>

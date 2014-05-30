@@ -1,0 +1,24 @@
+{
+  "name": "inn-template",
+  "version": "0.0.0",
+  "description": "XSLT Preprocessor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "xsl",
+    "xslt",
+    "template",
+    "xml",
+    "html"
+  ],
+  "author": "Sergey Chikuyonok",
+  "license": "MIT",
+  "dependencies": {
+    "htmlparser2": "^3.7.2",
+    "domhandler": "^2.2.0",
+    "expression-parser": "git+https://github.inn.ru/template/expression-parser.git",
+    "domutils": "^1.5.0"
+  }
+}
