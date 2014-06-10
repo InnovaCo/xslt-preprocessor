@@ -17,9 +17,9 @@
 		<xsl:copy-of select="."/>
 	</xsl:template>
 
-	<xsl:template match="t:style" mode="xslt">
+	<xsl:template match="/t:template" mode="xslt">
 		<xsl:element name="xsl:stylesheet">
-			<xsl:apply-templates select="@*" mode="xslt"/>
+			<xsl:copy-of select="@*"/>
 			<xsl:apply-templates mode="xslt"/>
 		</xsl:element>
 	</xsl:template>
