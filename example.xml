@@ -1,4 +1,4 @@
-<t:style use="exsl common dynamic">
+<t:template use="exsl common dynamic">
 	<!-- Подключение шаблонов -->
 	<t:import href="file.xml"/>
 
@@ -50,5 +50,5 @@
 	<p if="@attr?">if</p>
 
 	<!-- Вывод результата Xpath -->
-	{foo/bar[name = $test]}
-</t:style>
+	{{foo/bar[name = $test]}}
+</t:template>
