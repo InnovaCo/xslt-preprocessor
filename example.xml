@@ -7,10 +7,47 @@
 		id="{@id?}"
 		id="{@id if contains(@id, 'foo')}"
 		class="{@mod1?, @mod2 if @mod &gt; 2}"
-		params="{@param1?, @param2 if @param &gt; 3, ', '}"
+		params="{@param1?, @param2 if @param &gt; 3}"
 		>
 		Hello
 	</div>
+
+	<!-- Генерация элемента (структурно) -->
+	<div>
+		<t:attribute name="id" value="{cond?}"/>
+		<!-- 
+		Добавит атрибут `id` только в том случае, если условие `cond` истинно.
+		`value` может принимать attr-expr, как и в инлайн-атрибутах 
+		Аналогичный XSL:
+		<xsl:if test="cond">
+			<xsl-attribute name="id">
+				<xsl:value-of select="cond"/>
+			</xsl-attribute>
+		</xsl:if>
+		-->
+
+		<t:attribute name="id" if="cond">...</t:attribute>
+		<t:attribute name="id" value="a" if="b"/>
+
+
+		<!-- 
+		Отработает инструкцию <t:attr> только если выполняется условие `cond`.
+		Аналогичный XSL:
+		<xsl:if test="cond">
+			<xsl-attribute name="id">...</xsl-attribute>
+		</xsl:if>
+		-->
+
+		<t:attribute-set select="a: 'test', b: @attr" prefix="data-"/>
+		<!--
+		Добавляет атрибуты текущему элементу из указанного набора элементов.
+		Название элемента будет названием атрибута (опционально к нему 
+		добавляется значение атрибута prefix), строковое значение атрибута —
+		значением атрибута
+		-->
+	</div>
+
+	<p if="@attr?">if</p>
 
 	<!-- Вывод результата Xpath -->
 	{foo/bar[name = $test]}
