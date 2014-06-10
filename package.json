@@ -19,6 +19,7 @@
     "htmlparser2": "^3.7.2",
     "domhandler": "^2.2.0",
     "expression-parser": "git+https://github.inn.ru/template/expression-parser.git",
-    "domutils": "^1.5.0"
+    "domutils": "^1.5.0",
+    "string-stream": "git+https://github.com/emmetio/string-stream.git"
   }
 }
