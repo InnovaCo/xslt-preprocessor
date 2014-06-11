@@ -6,6 +6,8 @@ var transformers = [
 	require('./lib/transformer/if'),
 	require('./lib/transformer/attribute-element'),
 	require('./lib/transformer/attribute-set-element'),
+	require('./lib/transformer/param-element'),
+	require('./lib/transformer/invoke-template'),
 	require('./lib/transformer/attributes-expression'),
 	require('./lib/transformer/xsl'),
 	require('./lib/transformer/text')

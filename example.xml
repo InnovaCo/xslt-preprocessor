@@ -49,6 +49,21 @@
 
 	<p if="@attr?">if</p>
 
+	<!-- Вызов шаблона -->
+	<apply-templates select="foo/bar" 
+		params="name1: value1, name2: value2?">
+		<!--
+		params="node-set" — передаст набор параметров в шаблон, определённых в node-set. Название нода будет названием параметра, значение нода —
+		значением параметра
+		-->
+
+		<param name="param-name" if="cond">...</param> <!-- аналог xsl:with-param -->
+		<!-- 
+		Передаст параметр `param-name` в шаблон только в том случае, если 
+		условие `cond` вернёт истинное значение
+		-->
+	</apply-templates>
+
 	<!-- Вывод результата Xpath -->
 	{{foo/bar[name = $test]}}
 </stylesheet>
