@@ -1,4 +1,4 @@
-<t:template use="exsl common dynamic">
+<stylesheet use="exsl common dynamic">
 	<!-- Подключение шаблонов -->
 	<t:import href="file.xml"/>
 
@@ -14,7 +14,7 @@
 
 	<!-- Генерация элемента (структурно) -->
 	<div>
-		<t:attribute name="id" value="{cond?}"/>
+		<attribute name="id" value="{cond?}"/>
 		<!-- 
 		Добавит атрибут `id` только в том случае, если условие `cond` истинно.
 		`value` может принимать attr-expr, как и в инлайн-атрибутах 
@@ -26,8 +26,8 @@
 		</xsl:if>
 		-->
 
-		<t:attribute name="id" if="cond">...</t:attribute>
-		<t:attribute name="id" value="a" if="b"/>
+		<attribute name="id" if="cond">...</attribute>
+		<attribute name="id" value="a" if="b"/>
 
 
 		<!-- 
@@ -38,7 +38,7 @@
 		</xsl:if>
 		-->
 
-		<t:attribute-set select="a: 'test', b: @attr" prefix="data-"/>
+		<attribute-set select="a: 'test', b: @attr" prefix="data-"/>
 		<!--
 		Добавляет атрибуты текущему элементу из указанного набора элементов.
 		Название элемента будет названием атрибута (опционально к нему 
@@ -51,4 +51,4 @@
 
 	<!-- Вывод результата Xpath -->
 	{{foo/bar[name = $test]}}
-</t:template>
+</stylesheet>
