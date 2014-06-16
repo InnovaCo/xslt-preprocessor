@@ -19,10 +19,11 @@
   "author": "Sergey Chikuyonok",
   "license": "MIT",
   "dependencies": {
-    "htmlparser2": "^3.7.2",
     "domhandler": "^2.2.0",
-    "expression-parser": "git+https://github.inn.ru/template/expression-parser.git",
     "domutils": "^1.5.0",
-    "string-stream": "git+https://github.com/emmetio/string-stream.git"
+    "expression-parser": "git+https://github.inn.ru/template/expression-parser.git",
+    "htmlparser2": "^3.7.2",
+    "string-stream": "git+https://github.com/emmetio/string-stream.git",
+    "uuid": "^1.4.1"
   }
 }

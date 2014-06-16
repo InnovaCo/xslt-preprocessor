@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<div id="foo-sample" id2="foo-sample" class="class1 class2"/><div extra1="foo-sample" extra2="..." data-a="test" data-b="class1"/><h2>foo/bar</h2><p>output</p><div>value 0</div><div>value 1</div><div>value 2</div><div>value 3</div><p>param1: foo-sample</p><p>param2: </p>

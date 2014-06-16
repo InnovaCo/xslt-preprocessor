@@ -4,6 +4,7 @@ var utils = require('./lib/utils');
 var transformers = [
 	require('./lib/transformer/root'),
 	require('./lib/transformer/if'),
+	require('./lib/transformer/for-element'),
 	require('./lib/transformer/attribute-element'),
 	require('./lib/transformer/attribute-set-element'),
 	require('./lib/transformer/param-element'),
@@ -23,7 +24,12 @@ function transform(node) {
 	}
 
 	if (node.children) {
-		node.children.forEach(transform);
+		// number of children may change during transformation
+		// (e.g. `node.children.length` may change)
+		// so use unoptimized loop 
+		for (var i = 0; i < node.children.length; i++) {
+			transform(node.children[i]);
+		}
 	}
 }
 

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document id="foo-sample" mod1="class1" mod2="class2" mod="4">
+	<p>Hello world</p>
+	<foo>
+		<bar>foo/bar</bar>
+	</foo>
+</document>
