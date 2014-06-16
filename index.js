@@ -74,6 +74,8 @@ function processFiles(files, options) {
 			if ('dest' in options) {
 				var relpath = path.relative(getCwd(options), f);
 				targetFile = path.resolve(path.join(options.dest, relpath));
+				// make sure target file has .xsl extension
+				targetFile = targetFile.replace(/\.\w+$/, '') + '.xsl';
 			}
 
 			fs.writeFile(targetFile, out, function(err) {

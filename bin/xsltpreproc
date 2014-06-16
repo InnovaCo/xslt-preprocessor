@@ -21,7 +21,6 @@ var destPath = program.dest;
 if (destPath) {
 	destPath = path.resolve(destPath);
 	mkdirp.sync(destPath);
-	console.log('Dest path:', destPath);
 	opt.dest = destPath;
 }
 
