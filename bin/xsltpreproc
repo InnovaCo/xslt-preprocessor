@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var program = require('commander');
+var mkdirp = require('mkdirp');
+var processor = require('../');
+
+program
+	.version('0.0.1')
+	.usage('[options] file')
+	.option('-d, --dest <path>', 'Path to output destination folder. If not specified, original files will be overwritten!')
+	.parse(process.argv);
+
+if (!program.args.length) {
+	return console.error('No input files specified!');
+}
+
+
+var opt = {};
+var destPath = program.dest;
+if (destPath) {
+	destPath = path.resolve(destPath);
+	mkdirp.sync(destPath);
+	console.log('Dest path:', destPath);
+	opt.dest = destPath;
+}
+
+program.args.forEach(function(pattern) {
+	processor.preprocess(pattern, opt)
+});

@@ -1,8 +1,9 @@
 {
   "name": "inn-template",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "XSLT Preprocessor",
   "main": "index.js",
+  "bin": "./bin/xsltpreproc",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,10 +20,14 @@
   "author": "Sergey Chikuyonok",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^0.4.0",
+    "commander": "^2.2.0",
     "domhandler": "^2.2.0",
     "domutils": "^1.5.0",
     "expression-parser": "git+https://github.inn.ru/template/expression-parser.git",
+    "glob": "^4.0.2",
     "htmlparser2": "^3.7.2",
+    "mkdirp": "^0.5.0",
     "string-stream": "git+https://github.com/emmetio/string-stream.git",
     "uuid": "^1.4.1"
   }

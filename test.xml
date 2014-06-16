@@ -1,4 +1,4 @@
-<stylesheet use="exsl common dynamic">
+<stylesheet use="exsl common dyn">
 	<!-- Подключение шаблонов -->
 	<import href="./xsl/__x.xsl"/>
 
