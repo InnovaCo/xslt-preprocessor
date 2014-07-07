@@ -1,6 +1,7 @@
 <stylesheet use="exsl common dyn">
 	<!-- Подключение шаблонов -->
 	<import href="./xsl/__x.xsl"/>
+	<output method="html"/>
 
 	<template match="/document">
 		<!-- Генерация элемента (инлайн) -->

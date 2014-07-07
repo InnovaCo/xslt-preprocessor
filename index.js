@@ -48,7 +48,9 @@ function preprocessStylesheet(code) {
 		transform(node);
 	});
 
-	return DomUtils.getOuterHTML(dom[0]);
+	return dom.map(function(node) {
+		return DomUtils.getOuterHTML(node);
+	}).join('');
 }
 
 /**
@@ -89,6 +91,11 @@ function processFiles(files, options) {
 }
 
 module.exports = {
+	/**
+	 * Preprocesses given XSLT code
+	 * @param {String} code XSLT code to preprocess
+	 * @return {String}
+	 */
 	transform: preprocessStylesheet,
 
 	/**
