@@ -1,11 +1,15 @@
 {
-  "name": "inn-template",
+  "name": "xslt-preprocessor",
   "version": "0.0.1",
   "description": "XSLT Preprocessor",
   "main": "index.js",
   "bin": "./bin/xsltpreproc",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/InnovaCo/xslt-preprocessor.git"
   },
   "keywords": [
     "xsl",
@@ -24,11 +28,11 @@
     "commander": "^2.2.0",
     "domhandler": "^2.2.0",
     "domutils": "^1.5.0",
-    "expression-parser": "git+https://github.inn.ru/template/expression-parser.git",
+    "xpath-superset": "git+https://github.com/InnovaCo/xpath-superset.git",
     "glob": "^4.0.2",
     "htmlparser2": "^3.7.2",
     "mkdirp": "^0.5.0",
-    "string-stream": "git+https://github.com/emmetio/string-stream.git",
+    "string-stream": "git+https://github.com/emmetio/string-stream.git#v1.0.0",
     "uuid": "^1.4.1"
   }
 }

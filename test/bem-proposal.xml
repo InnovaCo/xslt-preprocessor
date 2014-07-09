@@ -1,0 +1,80 @@
+<!-- Определение блока -->
+<define name="block-name">
+	<element name="header" tag="header">
+		<div element="header-wrap">
+			<content>
+				<p>This is header</p>
+			</content>
+		</div>
+	</element>
+	<element name="content">
+		<content context="block">
+			Content placeholder
+		</content>
+	</element>
+	<element name="footer" optional="true">
+		<content>
+			<p>This is header</p>
+		</content>
+	</element>
+</define>
+
+<!-- Использование (вызов) блока -->
+<use name="block-name" modifiers="small extra">
+	<p>item 1</p>
+	<p>item 2</p>
+</use>
+
+<!-- Результат: -->
+<div class="block-name block-name_small block-name_extra">
+	<header class="block-name__header">
+		<div class="block-name__header-wrap">
+			<p>This is header</p>
+		</div>
+	</header>
+	<div class="block-name__content">
+		<p>item 1</p>
+		<p>item 2</p>
+	</div>
+</div>
+
+<!-- Вызов с переопределением содержимого элемента -->
+<use name="block-name">
+	<element name="header" modifiers="narrow">
+		New header content
+	</element>
+	<p>item 1</p>
+	<p>item 2</p>
+</use>
+
+<!-- Результат: -->
+<div class="block-name block-name_small block-name_extra">
+	<header class="block-name__header block-name__header_narrow">
+		<div class="block-name__header-wrap">
+			New header content
+		</div>
+	</header>
+	<div class="block-name__content">
+		<p>item 1</p>
+		<p>item 2</p>
+	</div>
+</div>
+
+<use name="block-name">
+	<element name="footer"/>
+	<p>My footer</p>
+</use>
+
+<div class="block-name block-name_small block-name_extra">
+	<header class="block-name__header">
+		<div class="block-name__header-wrap">
+			<p>This is header</p>
+		</div>
+	</header>
+	<div class="block-name__content">
+		Content placeholder
+	</div>
+	<div class="block-name__footer">
+		<p>This is header</p>
+	</div>
+</div>
