@@ -4,9 +4,11 @@ var glob = require('glob');
 var chalk = require('chalk');
 var DomUtils = require('domutils');
 var utils = require('./lib/utils');
+var std = require('./lib/std');
 
 var transformers = [
 	require('./lib/transformer/root'),
+	require('./lib/transformer/entities'),
 	require('./lib/transformer/if'),
 	require('./lib/transformer/for-element'),
 	require('./lib/transformer/attribute-element'),
@@ -47,6 +49,8 @@ function preprocessStylesheet(code) {
 	dom.forEach(function(node) {
 		transform(node);
 	});
+
+	std.inject(dom);
 
 	return dom.map(function(node) {
 		return DomUtils.getOuterHTML(node);

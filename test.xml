@@ -1,6 +1,9 @@
+<?xml version="1.0"?>
+<!ENTITIES "entities.dtd" [
+	<!ENTITY custom.tags "balloon">
+]>
 <stylesheet use="exsl common dyn">
 	<!-- Подключение шаблонов -->
-	<import href="./xsl/__x.xsl"/>
 	<output method="html"/>
 
 	<template match="/document">

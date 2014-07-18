@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+	<!-- === XSLT preprocessor standard templates === -->
 	<!-- Create normalized attribute only if value is not empty -->
 	<xsl:template name="__x_add_attribute">
 		<xsl:param name="name"/>
