@@ -46,5 +46,8 @@
 		<param name="p2"/>
 		<p>param1: {{ $p1 }}</p>
 		<p>param2: {{ $p2 }}</p>
+		<p>param2 (2): "{{ $p2 }}"</p>
+
+		<![CDATA[ <hello !> ]]>
 	</template>
 </stylesheet>
