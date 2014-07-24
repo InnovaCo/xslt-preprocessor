@@ -7,6 +7,8 @@
 	<output method="html"/>
 
 	<template match="/document">
+		<!-- Проверка правильности вывода результата в XML -->
+		<link rel="stylesheet" href="test.css"/>
 		<!-- Генерация элемента (инлайн) -->
 		<div 
 			id="{@id?}"

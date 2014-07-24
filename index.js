@@ -51,9 +51,9 @@ function preprocessStylesheet(code) {
 	});
 
 	std.inject(dom);
-
+	var opt = {xmlMode: true};
 	return dom.map(function(node) {
-		return DomUtils.getOuterHTML(node);
+		return DomUtils.getOuterHTML(node, opt);
 	}).join('');
 }
 
