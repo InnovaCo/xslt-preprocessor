@@ -36,7 +36,7 @@
 	</xsl:call-template>
 
 		<!-- Вызов шаблона -->
-		<xsl:apply-templates select="foo/bar"><xsl:with-param name="p1"><xsl:value-of select="@id"/></xsl:with-param>
+		<xsl:apply-templates select="foo/bar"><xsl:with-param name="p1" select="@id"/>
 <xsl:with-param name="p2"><xsl:if test="normalize-space(value2)"><xsl:value-of select="value2"/></xsl:if></xsl:with-param>
 			<!--
 			params="node-set" — передаст набор параметров в шаблон, определённых в node-set. Название нода будет названием параметра, значение нода —
