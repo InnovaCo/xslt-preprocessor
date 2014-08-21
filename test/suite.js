@@ -7,8 +7,8 @@ function read(file) {
 	return fs.readFileSync(path.join(__dirname, file), 'utf8');
 }
 
-function process(content, options) {
-	return normalize(transform(content, options));
+function process(content) {
+	return normalize(transform(content));
 }
 
 function normalize(str) {
@@ -26,5 +26,10 @@ describe('XSLT preprocessor', function() {
 	it('value-of shorthand', function() {
 		var result = process('<stylesheet>{{ "test" }}</stylesheet>');
 		assert(result.indexOf('<xsl:value-of select="&quot;test&quot;"/>') !== -1);
+	});
+
+	it('cdata', function() {
+		var result = process('<stylesheet><![CDATA[ {{ test }} ]]></stylesheet>');
+		assert(result.indexOf('<![CDATA[ {{ test }} ]]>') !== -1);
 	});
 });

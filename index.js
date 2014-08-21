@@ -34,7 +34,7 @@ function transform(node) {
 		}
 	}
 
-	if (node.children) {
+	if (node.children && node.type !== 'cdata') {
 		// number of children may change during transformation
 		// (e.g. `node.children.length` may change)
 		// so use unoptimized loop 
