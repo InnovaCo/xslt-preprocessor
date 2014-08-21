@@ -28,7 +28,7 @@
     "commander": "^2.2.0",
     "domhandler": "^2.2.0",
     "domutils": "git+https://github.com/fb55/domutils.git#43c50da605b68694e65b0c48bea820f172f5ef73",
-    "xpath-superset": "git+https://github.com/InnovaCo/xpath-superset.gitv#0.0.1",
+    "xpath-superset": "git+https://github.com/InnovaCo/xpath-superset.git#v0.0.1",
     "glob": "^4.0.2",
     "htmlparser2": "^3.7.2",
     "mkdirp": "^0.5.0",
