@@ -7,8 +7,8 @@ function read(file) {
 	return fs.readFileSync(path.join(__dirname, file), 'utf8');
 }
 
-function process(content) {
-	return normalize(transform(content));
+function process(content, options) {
+	return normalize(transform(content, options));
 }
 
 function normalize(str) {
@@ -21,5 +21,10 @@ describe('XSLT preprocessor', function() {
 		var output = normalize(read('fixtures/template1.xsl'));
 
 		assert.equal(process(input), output);
+	});
+
+	it('value-of shorthand', function() {
+		var result = process('<stylesheet>{{ "test" }}</stylesheet>');
+		assert(result.indexOf('<xsl:value-of select="&quot;test&quot;"/>') !== -1);
 	});
 });
